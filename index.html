@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora ISEE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora ISEE</h1>
+            <p>Calcule seu Indicador de Situação Econômica Equivalente</p>
+        </header>
+
+        <main>
+            <form id="iseeForm">
+                <div class="form-section">
+                    <h2>Dados Familiares</h2>
+                    
+                    <div class="form-group">
+                        <label for="familyMembers">Número de Membros da Família:</label>
+                        <input type="number" id="familyMembers" min="1" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familyIncome">Renda Familiar Total (€):</label>
+                        <input type="number" id="familyIncome" min="0" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Patrimônio</h2>
+                    
+                    <div class="form-group">
+                        <label for="financialAssets">Patrimônio Mobiliário (€):</label>
+                        <input type="number" id="financialAssets" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="realEstateAssets">Patrimônio Imobiliário (€):</label>
+                        <input type="number" id="realEstateAssets" min="0" step="0.01" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Calcular ISEE</button>
+            </form>
+
+            <div id="result" class="result-section hidden">
+                <h2>Resultado</h2>
+                <div class="result-value">
+                    <p>Seu ISEE Estimado:</p>
+                    <p id="iseeValue" class="isee-value">-</p>
+                </div>
+                <div class="result-details">
+                    <p><strong>Renda Considerada:</strong> <span id="incomeDetail">-</span></p>
+                    <p><strong>Patrimônio Considerado:</strong> <span id="assetDetail">-</span></p>
+                    <p><strong>Escala de Equivalência:</strong> <span id="scaleDetail">-</span></p>
+                </div>
+                <button type="button" class="reset-btn" onclick="resetForm()">Novo Cálculo</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Calculadora ISEE - Todos os direitos reservados</p>
+            <p><small>Este calculador fornece uma estimativa. Para cálculos oficiais, consulte as autoridades competentes.</small></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
